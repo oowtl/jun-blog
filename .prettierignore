@@ -1,0 +1,5 @@
+# ignore artifacts:
+.gitignore
+.next
+package.json
+package-lock.json
