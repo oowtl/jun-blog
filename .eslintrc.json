@@ -9,5 +9,10 @@
     "eslint:recommended",
     "plugin:prettier/recommended",
     "prettier"
-  ]
+  ],
+
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }]
+  }
 }
