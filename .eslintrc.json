@@ -6,6 +6,7 @@
   "extends": [
     "airbnb",
     "next/core-web-vitals",
+    "plugin:import/recommended",
     "eslint:recommended",
     "plugin:prettier/recommended",
     "prettier"
@@ -14,5 +15,13 @@
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx"] }]
+  },
+
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [["@", "./src"]]
+      }
+    }
   }
 }
