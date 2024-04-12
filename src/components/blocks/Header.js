@@ -4,7 +4,7 @@ import Link from 'next/link'
 import headerNavLinks from '@/data/headerNavLinks'
 
 // COMPONENTS
-import Logo from '@/components/atoms/Icon/logo.svg'
+import Logo from '@/components/atoms/icon/logo.svg'
 import NavigationButtton from '@/components/atoms/NavigationButton/NavigationButtton.jsx'
 
 export default function Header() {
