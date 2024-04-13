@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 
-const withMDX = require('@next/mdx')()
+const withPlugins = require('next-compose-plugins')
+const withMDX = require('@next/mdx')
 
 const nextConfig = {
   reactStrictMode: true, // strict mode
@@ -35,4 +36,4 @@ const nextConfig = {
   },
 }
 
-export default withMDX(nextConfig)
+module.exports = withPlugins([withMDX], nextConfig)
