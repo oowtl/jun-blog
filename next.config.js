@@ -1,8 +1,12 @@
 /** @type {import('next').NextConfig} */
+
+const withPlugins = require('next-compose-plugins')
+const withMDX = require('@next/mdx')
+
 const nextConfig = {
   reactStrictMode: true, // strict mode
   poweredByHeader: false, // X-Powered-By 미노출
-
+  pageExtensions: ['js', 'jsx', 'md', 'mdx'], // md, mdx 추가
   webpack: (config) => {
     // Grab the existing rule that handles SVG imports
     const fileLoaderRule = config.module.rules.find((rule) =>
@@ -32,4 +36,4 @@ const nextConfig = {
   },
 }
 
-export default nextConfig
+module.exports = withPlugins([withMDX], nextConfig)
