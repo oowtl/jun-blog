@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 // COMPONENTS
-import Tag from '@/components/atoms/Tag.jsx'
+import HashTag from '@/components/atoms/HashTag.jsx'
 
 export default function PostCard({
   title,
@@ -21,7 +21,7 @@ export default function PostCard({
               {tags.map((tag) => {
                 return (
                   <li key={`${title}-${tag}`}>
-                    <Tag tagName={tag} />
+                    <HashTag tagName={tag} />
                   </li>
                 )
               })}

@@ -10,17 +10,21 @@ const BASE_PATH = '/src/data/post'
 const POST_PATH = path.join(process.cwd(), BASE_PATH)
 
 /**
- * markdown frontmatter
  * @typedef {object} PostData
  * @property {string} title
  * @property {string} summary
  * @property {string[]} tags
  * @property {date(YYYY.MM.DD HH:MM)} createdAt
  * @property {date} duration
+ * @description markdown frontmatter type
  */
 
 /**
- *
+ * @typedef {object<stirng, number>} TagInfo
+ */
+
+/**
+ *`
  * @param {postUrl : string} postPath
  * @returns {PostData}
  *
@@ -40,7 +44,7 @@ export const parsePost = (postPath) => {
 
 /**
  * /data/post 안에 있는 post 를 불러오는 함수
- * @return {PostData}
+ * @return {PostData[]}
  */
 export const getAllPosts = () => {
   const postsPath = sync(`${POST_PATH}/**/*.{md,mdx}`, { onlyFiles: true })
@@ -50,4 +54,20 @@ export const getAllPosts = () => {
       return prev.day.isSameOrBefore(next.day) ? 1 : -1
     })
   return postsData
+}
+
+/**
+ *
+ * @param {PostData[]} postData
+ * @return {Object<string, number>} tagInfo
+ * @description postData 를 태그 목록에 맞게 변경시키는 함수
+ */
+export const getTagInfo = (postData) => {
+  const tagInfo = {}
+  const tagList = postData.map((post) => post.tags).flat(Infinity)
+  tagList.forEach((tag) => {
+    tagInfo[tag] = tag in tagInfo ? tagInfo[tag] + 1 : 1
+  })
+
+  return tagInfo
 }
