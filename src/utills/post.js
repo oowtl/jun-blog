@@ -32,10 +32,11 @@ const POST_PATH = path.join(process.cwd(), BASE_PATH)
  */
 export const parsePost = (postPath) => {
   const file = readFileSync(postPath, { encoding: 'utf-8' })
-  const { data } = matter(file)
+  const { data, content } = matter(file)
 
   return {
     ...data,
+    content,
     day: dayjs(data.createdAt),
     createdAt: dayjs(data.createdAt).format('LLL'),
     duration: dayjs(data.createdAt).fromNow(),
