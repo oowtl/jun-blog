@@ -34,6 +34,10 @@ const nextConfig = {
 
     return config
   },
+
+  async redirects() {
+    return [{ source: '/', destination: '/postlist', permanent: true }]
+  },
 }
 
 module.exports = withPlugins([withMDX], nextConfig)
