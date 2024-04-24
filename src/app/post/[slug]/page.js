@@ -3,6 +3,7 @@ import { getAllPosts } from '@/utills/post'
 import CustomMdx from '@/components/blocks/CustomMdx.jsx'
 
 import LinkPost from '@/components/atoms/LinkPost.jsx'
+import Giscus from '@/components/blocks/Giscus.jsx'
 
 export default async function PostPage({ params }) {
   const slug = decodeURI(params.slug)
@@ -36,6 +37,7 @@ export default async function PostPage({ params }) {
           <LinkPost href={`/post/${nextPost.title}`}>{nextPost.title}</LinkPost>
         )}
       </div>
+      <Giscus />
     </>
   )
 }
