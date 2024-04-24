@@ -11,9 +11,9 @@ export default function Header() {
   return (
     <header>
       <nav className="flex justify-between">
-        <h1 className="w-12 h-12">
+        <h1 className="h-12 w-12">
           <Link href="/">
-            <Logo className="w-full h-full" />
+            <Logo className="h-full w-full" />
           </Link>
         </h1>
         <ul className="flex gap-5">
@@ -21,7 +21,7 @@ export default function Header() {
             .filter((navLink) => navLink.href !== '/')
             .map((navLink) => {
               return (
-                <li key={navLink.title} className="w-12 h-12 relative">
+                <li key={navLink.title} className="relative h-12 w-12">
                   <NavigationButtton
                     href={navLink.href}
                     title={navLink.title}
