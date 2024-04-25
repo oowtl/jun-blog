@@ -13,7 +13,7 @@ export default function NavigationButtton({ title, href }) {
   return (
     <Link
       href={href}
-      className={`h-full flex justify-center items-center ${isMatch && "after:content=[''] after:absolute after:-bottom-1 after:w-full after:h-1 after:bg-black"}`}
+      className={`flex h-full items-center justify-center ${isMatch && "after:content=[''] after:absolute after:-bottom-1 after:h-1 after:w-full after:bg-black"}`}
     >
       <span className={isMatch ? 'font-bold' : ''}>{title}</span>
     </Link>

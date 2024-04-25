@@ -10,7 +10,7 @@ export default function Footer() {
           aria-label="GithubLink"
         >
           <span>
-            <Github className="w-12 h-12" clickable />
+            <Github className="h-12 w-12" clickable />
           </span>
         </a>
       </div>
